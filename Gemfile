@@ -94,7 +94,7 @@ gem 'redis', require:  ["redis", "redis/connection/hiredis"]
 gem 'active_model_serializers', '~> 0.8.0'
 
 
-gem 'onebox'
+gem 'onebox', '>= 1.8.3'
 
 gem 'ember-rails'
 gem 'ember-source', '1.6.0.beta.2'
@@ -110,7 +110,7 @@ gem 'fast_xs'
 
 gem 'fast_xor'
 gem 'fastimage'
-gem 'fog', '1.22.1', require: false
+gem 'fog', '1.23.0', require: false
 gem 'unf', require: false
 
 # see: https://twitter.com/samsaffron/status/412360162297393152
@@ -126,7 +126,7 @@ gem 'email_reply_parser-discourse', require: 'email_reply_parser'
 gem 'image_optim', '0.9.1'
 gem 'multi_json'
 gem 'mustache'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.16.2'
 gem 'omniauth'
 gem 'omniauth-openid'
 gem 'openid-redis-store'
@@ -147,12 +147,12 @@ gem 'rake'
 
 gem 'rest-client'
 gem 'rinku'
-gem 'sanitize'
+gem 'sanitize', '>= 3.0.3'
 gem 'sass'
 gem 'sidekiq'
 
 # for sidekiq web
-gem 'sinatra', require: nil
+gem 'sinatra', '>= 4.0.0', require: nil
 
 gem 'therubyracer'
 gem 'thin', require: false
