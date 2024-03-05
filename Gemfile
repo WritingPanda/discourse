@@ -70,8 +70,8 @@ end
 gem 'seed-fu', '~> 2.3.3'
 
 if rails_master?
-  gem 'rails', git: 'https://github.com/rails/rails.git'
-  gem 'actionpack-action_caching', git: 'https://github.com/rails/actionpack-action_caching.git'
+  gem 'rails', '>= 7.0.8.1', '>= 7.0.8.1', git: 'https://github.com/rails/rails.git'
+  gem 'actionpack-action_caching', '>= 1.2.1', '>= 1.2.1', git: 'https://github.com/rails/actionpack-action_caching.git'
 else
   gem 'rails'
   gem 'actionpack-action_caching'
@@ -96,12 +96,12 @@ gem 'active_model_serializers', '~> 0.8.0'
 
 gem 'onebox'
 
-gem 'ember-rails'
+gem 'ember-rails', '>= 0.15.0'
 gem 'ember-source', '1.6.0.beta.2'
 gem 'handlebars-source', '1.3.0'
 gem 'barber'
 
-gem 'message_bus'
+gem 'message_bus', '>= 1.0.6'
 gem 'rails_multisite', path: 'vendor/gems/rails_multisite'
 
 gem 'redcarpet', require: false
@@ -127,17 +127,17 @@ gem 'image_optim', '0.9.1'
 gem 'multi_json'
 gem 'mustache'
 gem 'nokogiri'
-gem 'omniauth'
-gem 'omniauth-openid'
+gem 'omniauth', '>= 1.3.1'
+gem 'omniauth-openid', '>= 2.0.1'
 gem 'openid-redis-store'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+gem 'omniauth-facebook', '>= 2.0.1'
+gem 'omniauth-twitter', '>= 1.1.0'
 
 # forked while https://github.com/intridea/omniauth-github/pull/41 is being upstreamd
 gem 'omniauth-github-discourse', require: 'omniauth-github'
 
-gem 'omniauth-oauth2', require: false
-gem 'omniauth-google-oauth2'
+gem 'omniauth-oauth2', '>= 1.3.0', require: false
+gem 'omniauth-google-oauth2', '>= 0.2.6'
 gem 'oj'
 # while resolving https://groups.google.com/forum/#!topic/ruby-pg/5_ylGmog1S4
 gem 'pg', '0.15.1'
@@ -152,12 +152,12 @@ gem 'sass'
 gem 'sidekiq'
 
 # for sidekiq web
-gem 'sinatra', require: nil
+gem 'sinatra', '>= 2.0.0', require: nil
 
 gem 'therubyracer'
-gem 'thin', require: false
+gem 'thin', '>= 1.7.0', require: false
 gem 'highline', require: false
-gem 'rack-protection' # security
+gem 'rack-protection' , '>= 1.5.4' # security
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -165,10 +165,10 @@ gem 'rack-protection' # security
 group :assets do
 
   if rails_master?
-    gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git'
+    gem 'sass-rails', '>= 5.0.8', git: 'https://github.com/rails/sass-rails.git'
   else
     # later is breaking our asset compliation extensions
-    gem 'sass-rails', '4.0.2'
+    gem 'sass-rails', '5.0.8'
   end
 
   gem 'uglifier'
@@ -192,7 +192,7 @@ group :test, :development do
   gem 'mocha', require: false
   gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
   gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
-  gem 'rspec-rails', require: false
+  gem 'rspec-rails', '>= 3.0.0', require: false
   gem 'shoulda', require: false
   gem 'simplecov', require: false
   gem 'timecop'
@@ -202,7 +202,7 @@ group :test, :development do
 end
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.1.0'
   gem 'binding_of_caller'
   gem 'librarian', '>= 0.0.25', require: false
   gem 'annotate'
@@ -224,10 +224,10 @@ gem 'htmlentities', require: false
 #  we are open to it. by deferring require to the initializer we can configure discourse installs without it
 
 gem 'flamegraph', require: false
-gem 'rack-mini-profiler', require: false
+gem 'rack-mini-profiler', '>= 0.9.3', require: false
 
-gem 'unicorn', require: false
-gem 'puma', require: false
+gem 'unicorn', '>= 4.9.0', require: false
+gem 'puma', '>= 2.12.0', require: false
 gem 'rbtrace', require: false, platform: :mri
 
 # required for feed importing and embedding
