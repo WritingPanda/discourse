@@ -232,7 +232,7 @@ gem 'rbtrace', require: false, platform: :mri
 
 # required for feed importing and embedding
 #
-gem 'ruby-readability', require: false
+gem 'ruby-readability', '>= 0.7.1', require: false
 
 gem 'simple-rss', require: false
 gem 'gctools', require: false, platform: :mri_21
