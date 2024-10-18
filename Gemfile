@@ -70,7 +70,7 @@ end
 gem 'seed-fu', '~> 2.3.3'
 
 if rails_master?
-  gem 'rails', git: 'https://github.com/rails/rails.git'
+  gem 'rails', '>= 7.0.0', '>= 7.0.0', git: 'https://github.com/rails/rails.git'
   gem 'actionpack-action_caching', git: 'https://github.com/rails/actionpack-action_caching.git'
 else
   gem 'rails'
@@ -165,10 +165,10 @@ gem 'rack-protection' # security
 group :assets do
 
   if rails_master?
-    gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git'
+    gem 'sass-rails', '>= 6.0.0', git: 'https://github.com/rails/sass-rails.git'
   else
     # later is breaking our asset compliation extensions
-    gem 'sass-rails', '4.0.2'
+    gem 'sass-rails', '6.0.0'
   end
 
   gem 'uglifier'
