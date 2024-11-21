@@ -152,7 +152,7 @@ gem 'sass'
 gem 'sidekiq'
 
 # for sidekiq web
-gem 'sinatra', require: nil
+gem 'sinatra', '>= 4.1.0', require: nil
 
 gem 'therubyracer'
 gem 'thin', require: false
