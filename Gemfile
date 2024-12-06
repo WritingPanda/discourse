@@ -110,7 +110,7 @@ gem 'fast_xs'
 
 gem 'fast_xor'
 gem 'fastimage'
-gem 'fog', '1.22.1', require: false
+gem 'fog', '1.37.0', require: false
 gem 'unf', require: false
 
 # see: https://twitter.com/samsaffron/status/412360162297393152
@@ -126,7 +126,7 @@ gem 'email_reply_parser-discourse', require: 'email_reply_parser'
 gem 'image_optim', '0.9.1'
 gem 'multi_json'
 gem 'mustache'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.15.7'
 gem 'omniauth'
 gem 'omniauth-openid'
 gem 'openid-redis-store'
@@ -147,7 +147,7 @@ gem 'rake'
 
 gem 'rest-client'
 gem 'rinku'
-gem 'sanitize'
+gem 'sanitize', '>= 6.0.0'
 gem 'sass'
 gem 'sidekiq'
 
