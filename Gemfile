@@ -67,16 +67,16 @@ unless Bundler::Dependency::PLATFORM_MAP.include? :mri_21
    end
 end
 
-gem 'seed-fu', '~> 2.3.3'
+gem 'seed-fu', '~> 2.3.6'
 
 if rails_master?
-  gem 'rails', git: 'https://github.com/rails/rails.git'
-  gem 'actionpack-action_caching', git: 'https://github.com/rails/actionpack-action_caching.git'
+  gem 'rails', '>= 7.1.0', '>= 7.1.0', git: 'https://github.com/rails/rails.git'
+  gem 'actionpack-action_caching', '>= 1.2.1', '>= 1.2.1', git: 'https://github.com/rails/actionpack-action_caching.git'
 else
   gem 'rails'
   gem 'actionpack-action_caching'
 end
-gem 'rails-observers'
+gem 'rails-observers', '>= 0.1.4'
 
 # Rails 4.1.6+ will relax the mail gem version requirement to `~> 2.5, >= 2.5.4`.
 # However, mail gem 2.6.x currently does not work with discourse because of the
@@ -91,17 +91,17 @@ gem 'redis', require:  ["redis", "redis/connection/hiredis"]
 # We use some ams 0.8.0 features, need to amend code
 # to support 0.9 etc, bench needs to run and ensure no
 # perf regressions
-gem 'active_model_serializers', '~> 0.8.0'
+gem 'active_model_serializers', '~> 0.8.3'
 
 
-gem 'onebox'
+gem 'onebox', '>= 1.8.3'
 
-gem 'ember-rails'
+gem 'ember-rails', '>= 0.15.0'
 gem 'ember-source', '1.6.0.beta.2'
 gem 'handlebars-source', '1.3.0'
-gem 'barber'
+gem 'barber', '>= 0.5.0'
 
-gem 'message_bus'
+gem 'message_bus', '>= 1.0.6'
 gem 'rails_multisite', path: 'vendor/gems/rails_multisite'
 
 gem 'redcarpet', require: false
@@ -110,7 +110,7 @@ gem 'fast_xs'
 
 gem 'fast_xor'
 gem 'fastimage'
-gem 'fog', '1.22.1', require: false
+gem 'fog', '1.37.0', require: false
 gem 'unf', require: false
 
 # see: https://twitter.com/samsaffron/status/412360162297393152
@@ -127,17 +127,17 @@ gem 'image_optim', '0.9.1'
 gem 'multi_json'
 gem 'mustache'
 gem 'nokogiri'
-gem 'omniauth'
-gem 'omniauth-openid'
+gem 'omniauth', '>= 2.1.0'
+gem 'omniauth-openid', '>= 2.0.1'
 gem 'openid-redis-store'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+gem 'omniauth-facebook', '>= 2.0.1'
+gem 'omniauth-twitter', '>= 1.1.0'
 
 # forked while https://github.com/intridea/omniauth-github/pull/41 is being upstreamd
 gem 'omniauth-github-discourse', require: 'omniauth-github'
 
-gem 'omniauth-oauth2', require: false
-gem 'omniauth-google-oauth2'
+gem 'omniauth-oauth2', '>= 1.7.1', require: false
+gem 'omniauth-google-oauth2', '>= 0.2.6'
 gem 'oj'
 # while resolving https://groups.google.com/forum/#!topic/ruby-pg/5_ylGmog1S4
 gem 'pg', '0.15.1'
@@ -147,17 +147,17 @@ gem 'rake'
 
 gem 'rest-client'
 gem 'rinku'
-gem 'sanitize'
+gem 'sanitize', '>= 6.0.0'
 gem 'sass'
 gem 'sidekiq'
 
 # for sidekiq web
-gem 'sinatra', require: nil
+gem 'sinatra', '>= 2.0.0', require: nil
 
 gem 'therubyracer'
-gem 'thin', require: false
+gem 'thin', '>= 2.0.0', require: false
 gem 'highline', require: false
-gem 'rack-protection' # security
+gem 'rack-protection' , '>= 1.5.4' # security
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -191,9 +191,9 @@ group :test, :development do
   gem 'qunit-rails'
   gem 'mocha', require: false
   gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
-  gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
-  gem 'rspec-rails', require: false
-  gem 'shoulda', require: false
+  gem 'rb-inotify', '~> 0.9', '>= 0.9.7', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
+  gem 'rspec-rails', '>= 3.0.0', require: false
+  gem 'shoulda', '>= 3.6.0', require: false
   gem 'simplecov', require: false
   gem 'timecop'
   gem 'rspec-given'
@@ -202,10 +202,10 @@ group :test, :development do
 end
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.1.0'
   gem 'binding_of_caller'
   gem 'librarian', '>= 0.0.25', require: false
-  gem 'annotate'
+  gem 'annotate', '>= 2.7.2'
   gem 'foreman', require: false
 end
 
@@ -224,15 +224,15 @@ gem 'htmlentities', require: false
 #  we are open to it. by deferring require to the initializer we can configure discourse installs without it
 
 gem 'flamegraph', require: false
-gem 'rack-mini-profiler', require: false
+gem 'rack-mini-profiler', '>= 0.9.3', require: false
 
 gem 'unicorn', require: false
 gem 'puma', require: false
-gem 'rbtrace', require: false, platform: :mri
+gem 'rbtrace', '>= 0.4.6', require: false, platform: :mri
 
 # required for feed importing and embedding
 #
-gem 'ruby-readability', require: false
+gem 'ruby-readability', '>= 0.7.1', require: false
 
 gem 'simple-rss', require: false
 gem 'gctools', require: false, platform: :mri_21
