@@ -70,7 +70,7 @@ end
 gem 'seed-fu', '~> 2.3.3'
 
 if rails_master?
-  gem 'rails', git: 'https://github.com/rails/rails.git'
+  gem 'rails', '>= 4.1.7.1', '>= 4.1.7.1', git: 'https://github.com/rails/rails.git'
   gem 'actionpack-action_caching', git: 'https://github.com/rails/actionpack-action_caching.git'
 else
   gem 'rails'
@@ -96,7 +96,7 @@ gem 'active_model_serializers', '~> 0.8.0'
 
 gem 'onebox'
 
-gem 'ember-rails'
+gem 'ember-rails', '>= 0.15.0'
 gem 'ember-source', '1.6.0.beta.2'
 gem 'handlebars-source', '1.3.0'
 gem 'barber'
@@ -165,10 +165,10 @@ gem 'rack-protection' # security
 group :assets do
 
   if rails_master?
-    gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git'
+    gem 'sass-rails', '>= 4.0.3', git: 'https://github.com/rails/sass-rails.git'
   else
     # later is breaking our asset compliation extensions
-    gem 'sass-rails', '4.0.2'
+    gem 'sass-rails', '4.0.3'
   end
 
   gem 'uglifier'
@@ -192,7 +192,7 @@ group :test, :development do
   gem 'mocha', require: false
   gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
   gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
-  gem 'rspec-rails', require: false
+  gem 'rspec-rails', '>= 3.0.0', require: false
   gem 'shoulda', require: false
   gem 'simplecov', require: false
   gem 'timecop'
@@ -206,7 +206,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'librarian', '>= 0.0.25', require: false
   gem 'annotate'
-  gem 'foreman', require: false
+  gem 'foreman', '>= 0.86.0', require: false
 end
 
 # this is an optional gem, it provides a high performance replacement
