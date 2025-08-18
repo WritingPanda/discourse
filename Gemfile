@@ -67,10 +67,10 @@ unless Bundler::Dependency::PLATFORM_MAP.include? :mri_21
    end
 end
 
-gem 'seed-fu', '~> 2.3.3'
+gem 'seed-fu', '~> 2.3.6'
 
 if rails_master?
-  gem 'rails', git: 'https://github.com/rails/rails.git'
+  gem 'rails', '>= 7.1.5.2', '>= 7.1.5.2', git: 'https://github.com/rails/rails.git'
   gem 'actionpack-action_caching', git: 'https://github.com/rails/actionpack-action_caching.git'
 else
   gem 'rails'
@@ -205,7 +205,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'librarian', '>= 0.0.25', require: false
-  gem 'annotate'
+  gem 'annotate', '>= 2.6.6'
   gem 'foreman', require: false
 end
 
